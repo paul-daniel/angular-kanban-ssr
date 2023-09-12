@@ -13,9 +13,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { ShellComponent } from './components/shell/shell.component';
 import { GoogleAuthDirective } from './directives/googleAuth/google-auth.directive';
+import { LoginSignupComponent } from './components/login-signup/login-signup.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const modules = [
   CommonModule,
@@ -31,11 +34,14 @@ const modules = [
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
-  RouterModule
+  MatTabsModule,
+  RouterModule, 
+  ReactiveFormsModule
 ];
 
 const components = [
   ShellComponent,
+  LoginSignupComponent,
   GoogleAuthDirective
 ]
 
@@ -45,11 +51,6 @@ const components = [
   ],
   imports: [
     ...modules,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
   ], 
   exports: [
     ...modules,
