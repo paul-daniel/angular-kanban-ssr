@@ -27,6 +27,18 @@ export class LoginSignupComponent {
 
   }
 
+  get email() {
+    return this.type === 'login'? this.loginForm.get('email') : this.signupForm.get('email');
+  }
+
+  get password() {
+    return this.type === 'login'? this.loginForm.get('password') : this.signupForm.get('password');
+  }
+
+  get confirmPassword() {
+    return this.type === 'signup' && this.signupForm.get('confirmPassword');
+  }
+
   switchForm(){
     if(this.type === 'login'){
       this.type = 'signup'
