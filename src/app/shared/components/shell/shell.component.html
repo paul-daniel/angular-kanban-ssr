@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="'navigation'"
+      [mode]="'over'"
+      [opened]="false">
+    <mat-toolbar>🔥 Kanban FireStarter</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" (click)="drawer.close()">🏠 Home</a>
+      <a mat-list-item routerLink="/login" (click)="drawer.close()">🔑 Login</a>
+      <a mat-list-item routerLink="/kanban" (click)="drawer.close()">📚 Kanban Demo</a>
+      <a mat-list-item routerLink="/customers" (click)="drawer.close()">⚡ SSR Demo</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a class="logo u-no-deco" routerLink="/">🔥 Kanban FireStarter</a>
+      <span class="spacer"></span>
+      <ng-container *ngIf="!(isHandset$ | async)">
+        <a class="u-no-deco" routerLink="/kanban" mat-button>
+          📚 Kanban Demo
+        </a>
+        <a class="u-no-deco" routerLink="/customers" mat-button>
+          ⚡ SSR Demo
+        </a>
+        <a class="u-no-deco" routerLink="/login" mat-button>
+          🔑 Login
+        </a>
+      </ng-container>
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon fontIcon="more_vert"></mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu> -->
+    </mat-toolbar>
+    
+    <!-- TRANSCLUSION ENABLED -->
+    <ng-content></ng-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
