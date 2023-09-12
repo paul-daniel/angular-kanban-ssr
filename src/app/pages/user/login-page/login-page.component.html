@@ -1,19 +1,14 @@
 <div class="login-page">
     <div class="form-container" *ngIf="!user">
-        <mat-tab-group>
-            <mat-tab label="signup">
-                <app-login-signup [type]="'signup'"></app-login-signup>
-            </mat-tab>
-            <mat-tab label="login">
-                <app-login-signup [type]="'login'"></app-login-signup>
-                <button class="sign__button" mat-raised-button appGoogleAuth>
-                    <mat-icon>
-                        <img class="sign__button__logo" src="/assets/icons8-google-48.png" />
-                    </mat-icon>
-                    <span>Login With Google</span>
-                </button>
-            </mat-tab>
-        </mat-tab-group>
+        <h2>Login</h2>
+        <button class="sign__button" mat-raised-button appGoogleAuth>
+            <mat-icon>
+                <img class="sign__button__logo" src="/assets/icons8-google-48.png" />
+            </mat-icon>
+            <span>Login With Google</span>
+        </button>
+        <p style="font-weight: 900;">OR</p>
+        <app-login-signup [type]="'signup'"></app-login-signup>
     </div>
     <div *ngIf="user" class="logged">
         <p>

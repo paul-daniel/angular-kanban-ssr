@@ -27,6 +27,14 @@ export class LoginSignupComponent {
 
   }
 
+  switchForm(){
+    if(this.type === 'login'){
+      this.type = 'signup'
+    }else{
+      this.type = 'login'
+    }
+  }
+
   onSubmit() {
     if(this.loginForm.valid && this.type === 'login'){
       const {email, password} = this.loginForm.value
