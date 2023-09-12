@@ -1,1 +1,10 @@
-<p>login-page works!</p>
+<div class="login" *ngIf="!user">
+    <h1>Login</h1>
+    <button mat-raised-button appGoogleAuth>Login With Google</button>
+</div>
+<div *ngIf="user" class="logged">
+    <p>
+        Logged in as <strong>{{user.email}}</strong>
+    </p>
+    <button mat-stroked-button (click)="auth.signOut()">Sign Out</button>
+</div>

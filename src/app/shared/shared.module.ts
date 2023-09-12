@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { ShellComponent } from './components/shell/shell.component';
+import { GoogleAuthDirective } from './directives/googleAuth/google-auth.directive';
 
 const modules = [
   CommonModule,
@@ -35,12 +36,12 @@ const modules = [
 
 const components = [
   ShellComponent,
+  GoogleAuthDirective
 ]
 
 @NgModule({
   declarations: [
     ...components,
-    ShellComponent
   ],
   imports: [
     ...modules,

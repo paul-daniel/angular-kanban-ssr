@@ -9,10 +9,9 @@ import { SharedModule } from './shared/shared.module';
 
 import { environment } from 'src/environment/environment';
 
-import {AngularFireModule} from '@angular/fire/compat';
-
-import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -23,10 +22,10 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    AngularFireAuthModule,
-
+    provideAuth(() => getAuth()),
+    
 
   ],
   providers: [],
