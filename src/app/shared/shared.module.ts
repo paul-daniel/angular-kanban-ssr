@@ -19,8 +19,8 @@ import { ShellComponent } from './components/shell/shell.component';
 import { GoogleAuthDirective } from './directives/googleAuth/google-auth.directive';
 import { LoginSignupComponent } from './components/login-signup/login-signup.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BoardListComponent } from './components/board-list/board-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BoardComponent } from './components/board/board.component';
 
 const modules = [
   CommonModule,
@@ -44,7 +44,7 @@ const modules = [
 const components = [
   ShellComponent,
   LoginSignupComponent,
-  BoardListComponent,
+  BoardComponent,
   GoogleAuthDirective
 ]
 
