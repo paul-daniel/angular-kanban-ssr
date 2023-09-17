@@ -23,6 +23,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BoardComponent } from './components/board/board.component';
 import { BoardDialogComponent } from './components/dialogs/board-dialog.component';
 import { TaskDialogComponent } from './components/dialogs/task-dialog.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { DialogModule } from '@angular/cdk/dialog';
 
 const modules = [
@@ -45,6 +46,7 @@ const modules = [
   FormsModule,
   DragDropModule,
   DialogModule,
+  MatButtonToggleModule
 ];
 
 const components = [

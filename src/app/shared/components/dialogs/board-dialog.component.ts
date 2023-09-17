@@ -28,5 +28,5 @@ interface BoardData {
   styleUrls: ['./dialog.scss']
 })
 export class BoardDialogComponent {
-  constructor(public dialogRef: DialogRef<string>, @Inject(DIALOG_DATA) public data: BoardData, private boardService: BoardService) {}
+  constructor(public dialogRef: DialogRef<string>, @Inject(DIALOG_DATA) public data: BoardData) {}
 }
