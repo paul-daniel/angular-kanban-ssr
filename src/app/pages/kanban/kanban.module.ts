@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { KanbanRoutingModule } from './kanban-routing.module';
 import { KanbanPageComponent } from './kanban-page/kanban-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import {DragDropModule} from '@angular/cdk/drag-drop'; 
+import { FormsModule } from '@angular/forms';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     KanbanRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    DragDropModule,
+    MatButtonToggleModule
   ]
 })
 export class KanbanModule { }

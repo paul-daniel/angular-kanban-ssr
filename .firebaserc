@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kanban-bfd92": {
+      "hosting": {
+        "Kanban": [
+          "kanban-bfd92"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kanban-bfd92"
+  }
+}

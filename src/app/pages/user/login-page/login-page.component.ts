@@ -1,6 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { User, authState, Auth } from '@angular/fire/auth';
-import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login-page',
