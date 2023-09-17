@@ -2,7 +2,7 @@
     <mat-card-header class="header">
       <!-- Slot for the handle -->
       <ng-content></ng-content>
-      <mat-card-title>
+      <mat-card-title class="card-title">
         {{ board.title }}
       </mat-card-title>
       <mat-card-subtitle>
@@ -23,6 +23,16 @@
       >
         <mat-card class="task__card" [ngClass]="task.label"> {{ task.description }} </mat-card>
       </div>
+    </div>
+    <div
+        class="controls"
+    >
+        <button class="space-sm" mat-stroked-button>
+            <mat-icon>add</mat-icon>
+        </button>
+        <button mat-flat-button color="warn">
+            <mat-icon>delete</mat-icon>
+        </button>
     </div>
   </mat-card>
   

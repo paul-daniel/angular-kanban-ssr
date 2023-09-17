@@ -28,7 +28,7 @@
 }
 
 .task__card{
-    padding : 10px;
+    padding : 20px;
 }
 
 .header{
@@ -36,6 +36,26 @@
     justify-content: space-between;
     padding-left: 0;
     padding-right: 0;
+}
+
+.mat-mdc-outlined-button>.mat-icon{
+    margin-right: 0;
+    margin-left: 0;
+}
+.mat-mdc-unelevated-button>.mat-icon{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.space-sm{
+    margin-right: 10px;
+}
+
+.card-title{
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
 }
 
 .blue { background: #71deff; color: black; }

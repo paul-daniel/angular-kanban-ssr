@@ -26,17 +26,18 @@ export class BoardService {
    * @param {string} board board to create
    * @returns {Promise<DocumentReference<DocumentData, DocumentData>>} ref of the new board
    */
-  createBoard(board: Board){
+  createBoard(title:string, priority : number){
     try {
       const user = this.auth.currentUser;
     
       if(!user || !this.boardCollectionRef) return
       const docRef = addDoc(this.boardCollectionRef, {
-              ...board,
+              priority : priority,
+              title: title,
               uid: user.uid,
               tasks: [{description : 'Hello!', label: 'yellow' }]
       })
-      return docRef;
+      return docRef; 
     } catch (error) {
       console.error(error);
       throw new Error("Could not create board");

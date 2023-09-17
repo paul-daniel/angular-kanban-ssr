@@ -21,6 +21,9 @@ import { LoginSignupComponent } from './components/login-signup/login-signup.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BoardComponent } from './components/board/board.component';
+import { BoardDialogComponent } from './components/dialogs/board-dialog.component';
+import { TaskDialogComponent } from './components/dialogs/task-dialog.component';
+import { DialogModule } from '@angular/cdk/dialog';
 
 const modules = [
   CommonModule,
@@ -38,13 +41,18 @@ const modules = [
   MatSnackBarModule,
   MatTabsModule,
   RouterModule, 
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  FormsModule,
+  DragDropModule,
+  DialogModule,
 ];
 
 const components = [
   ShellComponent,
   LoginSignupComponent,
   BoardComponent,
+  BoardDialogComponent,
+  TaskDialogComponent,
   GoogleAuthDirective
 ]
 
@@ -54,7 +62,6 @@ const components = [
   ],
   imports: [
     ...modules,
-    DragDropModule,
   ], 
   exports: [
     ...modules,
