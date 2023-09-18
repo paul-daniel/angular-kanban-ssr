@@ -19,7 +19,7 @@ interface BoardData {
       </div>
       <div mat-dialog-actions>
         <button mat-stroked-button (click)="dialogRef.close()" class="u-space-sm">Cancel</button>
-        <button mat-flat-button (click)="dialogRef.close(data.title)" color="accent" cdkFocusInitial>
+        <button mat-flat-button (click)="dialogRef.close(data.title)" color="accent">
           Create
         </button>
       </div>

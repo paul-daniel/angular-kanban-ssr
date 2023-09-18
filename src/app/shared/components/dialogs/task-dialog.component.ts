@@ -1,9 +1,6 @@
 import { DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
 import { Component, Inject } from '@angular/core';
-import { BoardService } from 'src/app/services/board/board.service';
 import { TaskData } from '../board/board.component';
-
-
 
 @Component({
   selector: 'app-task-dialog',
@@ -31,10 +28,18 @@ import { TaskData } from '../board/board.component';
         </mat-button-toggle-group>
       </div>
       <div mat-dialog-actions>
-        <button mat-flat-button color="accent" class="u-mt-sm" (click)="dialogRef.close(data)" cdkFocusInitial>
+        <button mat-flat-button color="accent" class="u-mt-sm u-space-sm" (click)="dialogRef.close(data)">
           {{ data.isNew ? 'Add Task' : 'Update Task' }}
         </button>
-
+        <button *ngIf="!data.isNew && !extended" mat-button color="warn" class="u-mt-sm" (click)="toggleConfirm()">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <span *ngIf="extended" class="delete-conf">
+          <button mat-flat-button color="warn" class="u-mt-sm u-space-sm" (click)="dialogRef.close('delete')">
+            <mat-icon>delete</mat-icon> Confirm
+          </button>
+          <button mat-button (click)="toggleConfirm()" class="u-mt-sm">Cancel</button>
+        </span>
       </div>
     </mat-card>
   `,
@@ -44,7 +49,13 @@ import { TaskData } from '../board/board.component';
 })
 export class TaskDialogComponent {
 
+  extended = false
+
   labelOptions = ['purple', 'blue', 'green', 'yellow', 'red', 'gray'];
 
-  constructor(public dialogRef: DialogRef<string>, @Inject(DIALOG_DATA) public data: any) {}
+  constructor(public dialogRef: DialogRef<TaskData | 'delete'>, @Inject(DIALOG_DATA) public data: TaskData) {}
+
+  toggleConfirm(): void {
+    this.extended = !this.extended;
+  }
 }

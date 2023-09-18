@@ -25,6 +25,7 @@ import { BoardDialogComponent } from './components/dialogs/board-dialog.componen
 import { TaskDialogComponent } from './components/dialogs/task-dialog.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { DialogModule } from '@angular/cdk/dialog';
+import { DeleteDialogComponent } from './components/dialogs/delete-dialog.component';
 
 const modules = [
   CommonModule,
@@ -61,6 +62,7 @@ const components = [
 @NgModule({
   declarations: [
     ...components,
+    DeleteDialogComponent,
   ],
   imports: [
     ...modules,
