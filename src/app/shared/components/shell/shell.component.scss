@@ -24,6 +24,18 @@
   color: textColors.$color-white;
 }
 
+.profile-picture{
+  width : 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.profile-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -32,4 +44,8 @@
 
 .u-no-deco{
   text-decoration: none;
+}
+
+.u-space-pad{
+  margin: 0 2rem;
 }
